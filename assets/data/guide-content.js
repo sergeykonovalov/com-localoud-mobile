@@ -1,37 +1,43 @@
+const RECORDINGS_PATH = './assets/data/recordings/';
+const IMAGES_PATH = './assets/data/images/';
+
 export default {
   meta: {
-    title: 'Первый гид на React Native'
+    title: 'Localoud RN'
   },
   tracks: [
     {
-      title: '001',
-      recordingFile: '001.mp3',
-      images: [
-        {
-          imageLink: '001,jpg',
-          imageText: '001'
-        }
-      ]
+      key: '001',
+      title: 'Первая запись',
+      get recordingFile() {
+        return RECORDINGS_PATH + this.key + '.mp3';
+      },
+      get imageFile() {
+        return IMAGES_PATH + this.key + '.jpg';
+      },
+      imageText: '001'
     },
     {
-      title: '002',
-      recordingFile: '002.mp3',
-      images: [
-        {
-          imageLink: '002.jpg',
-          imageText: '002'
-        }
-      ]
+      key: '002',
+      title: 'Вторая запись',
+      get recordingFile() {
+        return RECORDINGS_PATH + this.key + '.mp3';
+      },
+      get imageFile() {
+        return IMAGES_PATH + this.key + '.jpg';
+      },
+      imageText: '002'
     },
     {
-      title: '003',
-      recordingFile: '003.mp3',
-      images: [
-        {
-          imageLink: '003.jpg',
-          imageText: '003'
-        }
-      ]
+      key: '003',
+      title: 'Третья запись',
+      get recordingFile() {
+        return RECORDINGS_PATH + this.key + '.mp3';
+      },
+      get imageFile() {
+        return IMAGES_PATH + this.key + '.jpg';
+      },
+      imageText: '003'
     },
   ]
 };

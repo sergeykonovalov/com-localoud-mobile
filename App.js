@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {Slider, StyleSheet, Text, View} from 'react-native';
 import GuideContent from './assets/data/guide-content';
 import * as Font from 'expo-font';
 import {AppLoading} from 'expo';
@@ -23,11 +23,19 @@ export default function App() {
         onError={(error) => console.log(error)}
       />
     );
-  };
+  }
+
+  const tracks = GuideContent.tracks.map((track) => {
+    return(
+      <Text key={track.title}>{track.title} ({track.recordingFile}) ({track.imageFile})</Text>
+    );
+  });
 
   return (
     <View style={styles.container}>
       <Header title={GuideContent.meta.title} />
+      {tracks}
+      <Slider/>
     </View>
   );
 }
